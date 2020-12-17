@@ -17,20 +17,16 @@
         <title>Krisu blogja</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">PLAYSTATION 4</a></h1>
-        </div>
+      <div>
+        <h1><a href="/">PLAYSTATION 4</a></h1>
+      </div>
 
-        <div>
-            <p>posztolta: 17.12.2020, 21:18</p>
-            <h2><a href="">Mi a PS4 ?</a></h2>
-            <p>Sony cég által gyártott 8. generációs konzol !</p>
-        </div>
-
-        <div>
-            <p>posztolta: 18.12.2020, 04:32</p>
-            <h2><a href="">Miért jó nekünk ?</a></h2>
-            <p>Aki szereti a kaland játékokat, azoknak a legjobb választás.</p>
-        </div>
+      {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+{% endfor %}
     </body>
 </html>
